@@ -4,21 +4,16 @@ import { Menu, X } from 'lucide-react';
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
-  const [isDropdownOpen, setIsDropdownOpen] = useState(false);
+  const [isAchievementsDropdownOpen, setIsAchievementsDropdownOpen] = useState(false);
+  const [isCommitteeDropdownOpen, setIsCommitteeDropdownOpen] = useState(false);
   const location = useLocation(); // Get the current route
 
   const menuItems = [
     { name: 'Home', path: '/' },
-    { name: 'Committee', path: '/committee' },
     { name: 'Useful Links', path: '/useful-links' },
     { name: 'Incubation Center', path: '/incubation-center' },
     { name: 'Contact Us', path: '/contact-us' },
   ];
-
-  const handleCommitteeClick = (e: React.MouseEvent) => {
-    e.preventDefault();
-    setIsDropdownOpen(!isDropdownOpen);
-  };
 
   return (
     <nav className="bg-gray-800 border-b border-gray-700">
@@ -53,7 +48,7 @@ const Navbar = () => {
             {/* Achievements Dropdown */}
             <div className="relative">
               <button
-                onClick={() => setIsDropdownOpen(!isDropdownOpen)}
+                onClick={() => setIsAchievementsDropdownOpen(!isAchievementsDropdownOpen)}
                 className={`flex items-center px-4 py-2 text-sm font-medium transition-colors ${
                   location.pathname.startsWith('/achievements')
                     ? 'text-blue-400 hover:text-blue-300' // Highlight active dropdown
@@ -62,10 +57,14 @@ const Navbar = () => {
               >
                 Achievements
               </button>
+              {isAchievementsDropdownOpen && (
+                <div className="absolute left-0 mt-2 w-48 bg-gray-700 rounded-lg shadow-lg">
               {isDropdownOpen && (
                 <div className="absolute left-0 mt-1 w-48 bg-gray-700 rounded-md shadow-lg z-50 overflow-hidden">
                   <Link
                     to="/achievements/student"
+                    className="block px-4 py-2 text-sm text-gray-300 hover:bg-gray-600 hover:text-white"
+                    onClick={() => setIsAchievementsDropdownOpen(false)}
                     className="block px-5 py-3 text-base text-gray-300 hover:bg-gray-600 hover:text-white transition-colors"
                     onClick={() => setIsDropdownOpen(false)}
                   >
@@ -73,10 +72,44 @@ const Navbar = () => {
                   </Link>
                   <Link
                     to="/achievements/staff"
+                    className="block px-4 py-2 text-sm text-gray-300 hover:bg-gray-600 hover:text-white"
+                    onClick={() => setIsAchievementsDropdownOpen(false)}
                     className="block px-5 py-3 text-base text-gray-300 hover:bg-gray-600 hover:text-white transition-colors"
                     onClick={() => setIsDropdownOpen(false)}
                   >
                     Staff
+                  </Link>
+                </div>
+              )}
+            </div>
+
+            {/* Committee Dropdown */}
+            <div className="relative">
+              <button
+                onClick={() => setIsCommitteeDropdownOpen(!isCommitteeDropdownOpen)}
+                className={`flex items-center px-4 py-2 text-sm font-medium transition-colors ${
+                  location.pathname.startsWith('/committee')
+                    ? 'text-blue-400 hover:text-blue-300' // Highlight active dropdown
+                    : 'text-gray-300 hover:text-white'
+                }`}
+              >
+                Committee
+              </button>
+              {isCommitteeDropdownOpen && (
+                <div className="absolute left-0 mt-2 w-48 bg-gray-700 rounded-lg shadow-lg">
+                  <Link
+                    to="/teacher"
+                    className="block px-4 py-2 text-sm text-gray-300 hover:bg-gray-600 hover:text-white"
+                    onClick={() => setIsCommitteeDropdownOpen(false)}
+                  >
+                    Teacher
+                  </Link>
+                  <Link
+                    to="/student"
+                    className="block px-4 py-2 text-sm text-gray-300 hover:bg-gray-600 hover:text-white"
+                    onClick={() => setIsCommitteeDropdownOpen(false)}
+                  >
+                    Student
                   </Link>
                 </div>
               )}
@@ -108,7 +141,7 @@ const Navbar = () => {
             {/* Achievements Dropdown for Mobile */}
             <div>
               <button
-                onClick={() => setIsDropdownOpen(!isDropdownOpen)}
+                onClick={() => setIsAchievementsDropdownOpen(!isAchievementsDropdownOpen)}
                 className={`block w-full text-left px-3 py-2 rounded-md text-base font-medium ${
                   location.pathname.startsWith('/achievements')
                     ? 'text-blue-400 hover:text-blue-300' // Highlight active dropdown
@@ -117,10 +150,12 @@ const Navbar = () => {
               >
                 Achievements
               </button>
-              {isDropdownOpen && (
+              {isAchievementsDropdownOpen && (
                 <div className="mt-2 space-y-1">
                   <Link
                     to="/achievements/student"
+                    className="block px-3 py-2 rounded-md text-base font-medium text-gray-300 hover:bg-gray-600 hover:text-white"
+                    onClick={() => setIsAchievementsDropdownOpen(false)}
                     className="block px-5 py-3 rounded-md text-base font-medium text-gray-300 hover:bg-gray-600 hover:text-white"
                     onClick={() => setIsDropdownOpen(false)}
                   >
@@ -128,10 +163,44 @@ const Navbar = () => {
                   </Link>
                   <Link
                     to="/achievements/staff"
+                    className="block px-3 py-2 rounded-md text-base font-medium text-gray-300 hover:bg-gray-600 hover:text-white"
+                    onClick={() => setIsAchievementsDropdownOpen(false)}
                     className="block px-5 py-3 rounded-md text-base font-medium text-gray-300 hover:bg-gray-600 hover:text-white"
                     onClick={() => setIsDropdownOpen(false)}
                   >
                     Staff
+                  </Link>
+                </div>
+              )}
+            </div>
+
+            {/* Committee Dropdown for Mobile */}
+            <div>
+              <button
+                onClick={() => setIsCommitteeDropdownOpen(!isCommitteeDropdownOpen)}
+                className={`block w-full text-left px-3 py-2 rounded-md text-base font-medium ${
+                  location.pathname.startsWith('/committee')
+                    ? 'text-blue-400 hover:text-blue-300' // Highlight active dropdown
+                    : 'text-gray-300 hover:text-white'
+                }`}
+              >
+                Committee
+              </button>
+              {isCommitteeDropdownOpen && (
+                <div className="mt-2 space-y-1">
+                  <Link
+                    to="/teacher"
+                    className="block px-3 py-2 rounded-md text-base font-medium text-gray-300 hover:bg-gray-600 hover:text-white"
+                    onClick={() => setIsCommitteeDropdownOpen(false)}
+                  >
+                    Teacher
+                  </Link>
+                  <Link
+                    to="/student"
+                    className="block px-3 py-2 rounded-md text-base font-medium text-gray-300 hover:bg-gray-600 hover:text-white"
+                    onClick={() => setIsCommitteeDropdownOpen(false)}
+                  >
+                    Student
                   </Link>
                 </div>
               )}
