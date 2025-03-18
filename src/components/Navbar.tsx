@@ -1,16 +1,17 @@
 import React, { useState } from 'react';
+import { Link } from 'react-router-dom';
 import { Menu, X } from 'lucide-react';
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
+  const [isDropdownOpen, setIsDropdownOpen] = useState(false);
 
   const menuItems = [
-    'Home',
-    'Achievements',
-    'Committee',
-    'Useful Links',
-    'Incubation Center',
-    'Contact Us',
+    { name: 'Home', path: '/' },
+    { name: 'Committee', path: '#' },
+    { name: 'Useful Links', path: '#' },
+    { name: 'Incubation Center', path: '#' },
+    { name: 'Contact Us', path: '#' },
   ];
 
   return (
@@ -30,18 +31,46 @@ const Navbar = () => {
           {/* Desktop menu */}
           <div className="hidden md:flex items-center justify-center flex-1">
             {menuItems.map((item) => (
-              <a
-                key={item}
-                href="#"
+              <Link
+                key={item.name}
+                to={item.path}
                 className={`px-4 py-2 text-sm font-medium transition-colors ${
-                  item === 'Incubation Center'
+                  item.name === 'Incubation Center'
                     ? 'text-blue-400 hover:text-blue-300'
                     : 'text-gray-300 hover:text-white'
                 }`}
               >
-                {item}
-              </a>
+                {item.name}
+              </Link>
             ))}
+
+            {/* Achievements Dropdown */}
+            <div className="relative">
+              <button
+                onClick={() => setIsDropdownOpen(!isDropdownOpen)}
+                className="flex items-center px-4 py-2 text-sm font-medium text-gray-300 hover:text-white transition-colors focus:outline-none"
+              >
+                Achievements
+              </button>
+              {isDropdownOpen && (
+                <div className="absolute left-0 mt-2 w-48 bg-gray-700 rounded-lg shadow-lg">
+                  <Link
+                    to="/achievements/student"
+                    className="block px-4 py-2 text-sm text-gray-300 hover:bg-gray-600 hover:text-white"
+                    onClick={() => setIsDropdownOpen(false)}
+                  >
+                    Student
+                  </Link>
+                  <Link
+                    to="/achievements/staff"
+                    className="block px-4 py-2 text-sm text-gray-300 hover:bg-gray-600 hover:text-white"
+                    onClick={() => setIsDropdownOpen(false)}
+                  >
+                    Staff
+                  </Link>
+                </div>
+              )}
+            </div>
           </div>
         </div>
 
@@ -53,18 +82,46 @@ const Navbar = () => {
         >
           <div className="px-2 pt-2 pb-3 space-y-1">
             {menuItems.map((item) => (
-              <a
-                key={item}
-                href="#"
+              <Link
+                key={item.name}
+                to={item.path}
                 className={`block px-3 py-2 rounded-md text-base font-medium ${
-                  item === 'Incubation Center'
+                  item.name === 'Incubation Center'
                     ? 'text-blue-400 hover:text-blue-300'
                     : 'text-gray-300 hover:text-white'
                 }`}
               >
-                {item}
-              </a>
+                {item.name}
+              </Link>
             ))}
+
+            {/* Achievements Dropdown for Mobile */}
+            <div>
+              <button
+                onClick={() => setIsDropdownOpen(!isDropdownOpen)}
+                className="block w-full text-left px-3 py-2 rounded-md text-base font-medium text-gray-300 hover:text-white focus:outline-none"
+              >
+                Achievements
+              </button>
+              {isDropdownOpen && (
+                <div className="mt-2 space-y-1">
+                  <Link
+                    to="/achievements/student"
+                    className="block px-3 py-2 rounded-md text-base font-medium text-gray-300 hover:bg-gray-600 hover:text-white"
+                    onClick={() => setIsDropdownOpen(false)}
+                  >
+                    Student
+                  </Link>
+                  <Link
+                    to="/achievements/staff"
+                    className="block px-3 py-2 rounded-md text-base font-medium text-gray-300 hover:bg-gray-600 hover:text-white"
+                    onClick={() => setIsDropdownOpen(false)}
+                  >
+                    Staff
+                  </Link>
+                </div>
+              )}
+            </div>
           </div>
         </div>
       </div>
