@@ -1,10 +1,14 @@
-import { Mail } from 'lucide-react'; // Only keeping the used icon
+import { Mail } from 'lucide-react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import Navbar from './components/Navbar';
 import ScrollingAnnouncements from './components/ScrollingAnnouncements';
 import AboutSection from './components/AboutSection';
 import FounderSection from './components/FounderSection';
 import VisionMission from './components/VisionMission';
+import StudentAchievements from './components/StudentAchievements';
+import StaffAchievements from './components/StaffAchievements';
+import TeacherPage from './components/TeacherPage';
+import StudentPage from './components/StudentPage';
 import StudentAchievements from './components/StudentAchievements'; // Import StudentAchievements
 import StaffAchievements from './components/StaffAchievements'; // Import StaffAchievements
 import IncubationCenter from './components/IncubationCenter'; // Import the component
@@ -28,7 +32,7 @@ function App() {
             className="text-2xl md:text-3xl lg:text-4xl font-bold text-center bg-gradient-to-r from-blue-400 to-purple-500 bg-clip-text text-transparent mx-6 leading-relaxed"
             style={{ fontFamily: "'Open Sans', sans-serif", fontWeight: 700 }}
           >
-            Sindhudurg Shikshan Prasarak Mandal's<br></br>College of Engineering, Kankavli
+            Sindhudurg Shikshan Prasarak Mandal's<br />College of Engineering, Kankavli
           </h1>
           <img
             src={rightLogo}
@@ -57,6 +61,8 @@ function App() {
           />
           <Route path="/achievements/student" element={<StudentAchievements />} />
           <Route path="/achievements/staff" element={<StaffAchievements />} />
+          <Route path="/teacher" element={<TeacherPage />} />
+          <Route path="/student" element={<StudentPage />} />
           <Route path="/incubation-center" element={<IncubationCenter />} /> {/* New Route */}
         </Routes>
 
