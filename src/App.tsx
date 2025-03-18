@@ -1,4 +1,3 @@
-import React from 'react';
 import { Mail } from 'lucide-react'; // Only keeping the used icon
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import Navbar from './components/Navbar';
