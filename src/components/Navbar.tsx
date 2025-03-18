@@ -40,15 +40,9 @@ const Navbar = () => {
               <Link
                 key={item.name}
                 to={item.path}
-
-                className={`px-5 py-3 text-base font-medium transition-colors ${
-                  item.name === 'Incubation Center'
-                    ? 'text-blue-400 hover:text-blue-300'
-
-                className={`px-4 py-2 text-sm font-medium transition-colors ${
+                className={`block px-3 py-2 rounded-md text-base font-medium ${
                   location.pathname === item.path
-                    ? 'text-blue-400 hover:text-blue-300' // Highlight active page
-
+                    ? 'text-blue-400 hover:text-blue-300'
                     : 'text-gray-300 hover:text-white'
                 }`}
               >
@@ -60,15 +54,11 @@ const Navbar = () => {
             <div className="relative">
               <button
                 onClick={() => setIsDropdownOpen(!isDropdownOpen)}
-
-                className="flex items-center px-5 py-3 text-base font-medium text-gray-300 hover:text-white transition-colors focus:outline-none"
-
                 className={`flex items-center px-4 py-2 text-sm font-medium transition-colors ${
                   location.pathname.startsWith('/achievements')
                     ? 'text-blue-400 hover:text-blue-300' // Highlight active dropdown
                     : 'text-gray-300 hover:text-white'
                 }`}
-
               >
                 Achievements
               </button>
@@ -105,15 +95,9 @@ const Navbar = () => {
               <Link
                 key={item.name}
                 to={item.path}
-
-                className={`block px-5 py-3 rounded-md text-base font-medium ${
-                  item.name === 'Incubation Center'
-                    ? 'text-blue-400 hover:text-blue-300'
-
                 className={`block px-3 py-2 rounded-md text-base font-medium ${
                   location.pathname === item.path
-                    ? 'text-blue-400 hover:text-blue-300' // Highlight active page
-
+                    ? 'text-blue-400 hover:text-blue-300'
                     : 'text-gray-300 hover:text-white'
                 }`}
               >
@@ -125,15 +109,11 @@ const Navbar = () => {
             <div>
               <button
                 onClick={() => setIsDropdownOpen(!isDropdownOpen)}
-
-                className="block w-full text-left px-5 py-3 rounded-md text-base font-medium text-gray-300 hover:text-white focus:outline-none"
-
                 className={`block w-full text-left px-3 py-2 rounded-md text-base font-medium ${
                   location.pathname.startsWith('/achievements')
                     ? 'text-blue-400 hover:text-blue-300' // Highlight active dropdown
                     : 'text-gray-300 hover:text-white'
                 }`}
-
               >
                 Achievements
               </button>
