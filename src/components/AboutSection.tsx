@@ -6,7 +6,7 @@ const AboutSection = () => {
     <section className="grid md:grid-cols-2 gap-8 items-center">
       <div className="relative overflow-hidden rounded-lg">
         <img
-          src="https://images.unsplash.com/photo-1562774053-701939374585?ixlib=rb-1.2.1&auto=format&fit=crop&w=1000&q=80"
+          src="https://media.collegedekho.com/media/img/institute/crawled_images/None/ssp1.jpg"
           alt="College Campus"
           className="w-full h-[400px] object-cover transform hover:scale-105 transition-transform duration-500"
         />
