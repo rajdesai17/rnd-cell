@@ -14,6 +14,11 @@ const Navbar = () => {
     { name: 'Contact Us', path: '#' },
   ];
 
+  const handleCommitteeClick = (e: React.MouseEvent) => {
+    e.preventDefault();
+    setIsDropdownOpen(!isDropdownOpen);
+  };
+
   return (
     <nav className="bg-gray-800 border-b border-gray-700">
       <div className="container mx-auto px-4">
