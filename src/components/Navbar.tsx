@@ -4,10 +4,10 @@ import { Menu, X } from 'lucide-react';
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
+  const [isDropdownOpen, setIsDropdownOpen] = useState(false);
 
   const menuItems = [
     { name: 'Home', path: '/' },
-    { name: 'Achievements', path: '/achievements' },
     { name: 'Committee', path: '#' },
     { name: 'Useful Links', path: '#' },
     { name: 'Incubation Center', path: '#' },
@@ -43,6 +43,34 @@ const Navbar = () => {
                 {item.name}
               </Link>
             ))}
+
+            {/* Achievements Dropdown */}
+            <div className="relative">
+              <button
+                onClick={() => setIsDropdownOpen(!isDropdownOpen)}
+                className="flex items-center px-4 py-2 text-sm font-medium text-gray-300 hover:text-white transition-colors focus:outline-none"
+              >
+                Achievements
+              </button>
+              {isDropdownOpen && (
+                <div className="absolute left-0 mt-2 w-48 bg-gray-700 rounded-lg shadow-lg">
+                  <Link
+                    to="/achievements/student"
+                    className="block px-4 py-2 text-sm text-gray-300 hover:bg-gray-600 hover:text-white"
+                    onClick={() => setIsDropdownOpen(false)}
+                  >
+                    Student
+                  </Link>
+                  <Link
+                    to="/achievements/staff"
+                    className="block px-4 py-2 text-sm text-gray-300 hover:bg-gray-600 hover:text-white"
+                    onClick={() => setIsDropdownOpen(false)}
+                  >
+                    Staff
+                  </Link>
+                </div>
+              )}
+            </div>
           </div>
         </div>
 
@@ -66,6 +94,34 @@ const Navbar = () => {
                 {item.name}
               </Link>
             ))}
+
+            {/* Achievements Dropdown for Mobile */}
+            <div>
+              <button
+                onClick={() => setIsDropdownOpen(!isDropdownOpen)}
+                className="block w-full text-left px-3 py-2 rounded-md text-base font-medium text-gray-300 hover:text-white focus:outline-none"
+              >
+                Achievements
+              </button>
+              {isDropdownOpen && (
+                <div className="mt-2 space-y-1">
+                  <Link
+                    to="/achievements/student"
+                    className="block px-3 py-2 rounded-md text-base font-medium text-gray-300 hover:bg-gray-600 hover:text-white"
+                    onClick={() => setIsDropdownOpen(false)}
+                  >
+                    Student
+                  </Link>
+                  <Link
+                    to="/achievements/staff"
+                    className="block px-3 py-2 rounded-md text-base font-medium text-gray-300 hover:bg-gray-600 hover:text-white"
+                    onClick={() => setIsDropdownOpen(false)}
+                  >
+                    Staff
+                  </Link>
+                </div>
+              )}
+            </div>
           </div>
         </div>
       </div>
