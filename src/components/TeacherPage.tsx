@@ -1,16 +1,13 @@
 import React from 'react';
-import Navbar from './Navbar';
 
 const TeacherPage = () => {
   return (
     <div className="min-h-screen bg-gray-900 text-gray-100">
-      <Navbar />
-      
       <main className="container mx-auto px-4 py-8">
         <h1 className="text-4xl font-bold text-center mb-8 text-blue-400">
           R&D Committee Members
         </h1>
-        
+
         <h2 className="text-2xl font-semibold text-center mb-12 text-gray-300">
           Coordinators
         </h2>
@@ -32,9 +29,7 @@ const TeacherPage = () => {
               <p className="text-gray-300 mb-2">
                 Department of Computer Engineering
               </p>
-              <p className="text-gray-400">
-                Asst. Professor
-              </p>
+              <p className="text-gray-400">Asst. Professor</p>
             </div>
           </div>
 
@@ -54,9 +49,7 @@ const TeacherPage = () => {
               <p className="text-gray-300 mb-2">
                 Department of Computer Engineering
               </p>
-              <p className="text-gray-400">
-                Asst. Professor
-              </p>
+              <p className="text-gray-400">Asst. Professor</p>
             </div>
           </div>
         </div>

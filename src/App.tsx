@@ -9,8 +9,6 @@ import StudentAchievements from './components/StudentAchievements';
 import StaffAchievements from './components/StaffAchievements';
 import TeacherPage from './components/TeacherPage';
 import StudentPage from './components/StudentPage';
-import StudentAchievements from './components/StudentAchievements'; // Import StudentAchievements
-import StaffAchievements from './components/StaffAchievements'; // Import StaffAchievements
 import IncubationCenter from './components/IncubationCenter'; // Import the component
 
 // Import the logo images
