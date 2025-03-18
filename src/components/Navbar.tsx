@@ -22,19 +22,19 @@ const Navbar = () => {
           <div className="md:hidden">
             <button
               onClick={() => setIsOpen(!isOpen)}
-              className="text-gray-300 hover:text-white focus:outline-none"
+              className="text-gray-300 hover:text-white focus:outline-none p-3"
             >
-              {isOpen ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
+              {isOpen ? <X className="h-7 w-7" /> : <Menu className="h-7 w-7" />}
             </button>
           </div>
 
           {/* Desktop menu */}
-          <div className="hidden md:flex items-center justify-center flex-1">
+          <div className="hidden md:flex items-center justify-center flex-1 space-x-2">
             {menuItems.map((item) => (
               <Link
                 key={item.name}
                 to={item.path}
-                className={`px-4 py-2 text-sm font-medium transition-colors ${
+                className={`px-5 py-3 text-base font-medium transition-colors ${
                   item.name === 'Incubation Center'
                     ? 'text-blue-400 hover:text-blue-300'
                     : 'text-gray-300 hover:text-white'
@@ -48,22 +48,22 @@ const Navbar = () => {
             <div className="relative">
               <button
                 onClick={() => setIsDropdownOpen(!isDropdownOpen)}
-                className="flex items-center px-4 py-2 text-sm font-medium text-gray-300 hover:text-white transition-colors focus:outline-none"
+                className="flex items-center px-5 py-3 text-base font-medium text-gray-300 hover:text-white transition-colors focus:outline-none"
               >
                 Achievements
               </button>
               {isDropdownOpen && (
-                <div className="absolute left-0 mt-2 w-48 bg-gray-700 rounded-lg shadow-lg z-50">
+                <div className="absolute left-0 mt-1 w-48 bg-gray-700 rounded-md shadow-lg z-50 overflow-hidden">
                   <Link
                     to="/achievements/student"
-                    className="block px-4 py-2 text-sm text-gray-300 hover:bg-gray-600 hover:text-white"
+                    className="block px-5 py-3 text-base text-gray-300 hover:bg-gray-600 hover:text-white transition-colors"
                     onClick={() => setIsDropdownOpen(false)}
                   >
                     Student
                   </Link>
                   <Link
                     to="/achievements/staff"
-                    className="block px-4 py-2 text-sm text-gray-300 hover:bg-gray-600 hover:text-white"
+                    className="block px-5 py-3 text-base text-gray-300 hover:bg-gray-600 hover:text-white transition-colors"
                     onClick={() => setIsDropdownOpen(false)}
                   >
                     Staff
@@ -85,7 +85,7 @@ const Navbar = () => {
               <Link
                 key={item.name}
                 to={item.path}
-                className={`block px-3 py-2 rounded-md text-base font-medium ${
+                className={`block px-5 py-3 rounded-md text-base font-medium ${
                   item.name === 'Incubation Center'
                     ? 'text-blue-400 hover:text-blue-300'
                     : 'text-gray-300 hover:text-white'
@@ -99,7 +99,7 @@ const Navbar = () => {
             <div>
               <button
                 onClick={() => setIsDropdownOpen(!isDropdownOpen)}
-                className="block w-full text-left px-3 py-2 rounded-md text-base font-medium text-gray-300 hover:text-white focus:outline-none"
+                className="block w-full text-left px-5 py-3 rounded-md text-base font-medium text-gray-300 hover:text-white focus:outline-none"
               >
                 Achievements
               </button>
@@ -107,14 +107,14 @@ const Navbar = () => {
                 <div className="mt-2 space-y-1">
                   <Link
                     to="/achievements/student"
-                    className="block px-3 py-2 rounded-md text-base font-medium text-gray-300 hover:bg-gray-600 hover:text-white"
+                    className="block px-5 py-3 rounded-md text-base font-medium text-gray-300 hover:bg-gray-600 hover:text-white"
                     onClick={() => setIsDropdownOpen(false)}
                   >
                     Student
                   </Link>
                   <Link
                     to="/achievements/staff"
-                    className="block px-3 py-2 rounded-md text-base font-medium text-gray-300 hover:bg-gray-600 hover:text-white"
+                    className="block px-5 py-3 rounded-md text-base font-medium text-gray-300 hover:bg-gray-600 hover:text-white"
                     onClick={() => setIsDropdownOpen(false)}
                   >
                     Staff
