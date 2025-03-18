@@ -8,6 +8,13 @@ import VisionMission from './components/VisionMission';
 import StudentAchievements from './components/StudentAchievements';
 import StaffAchievements from './components/StaffAchievements';
 
+import TeacherPage from './components/TeacherPage';
+import StudentPage from './components/StudentPage';
+import StudentAchievements from './components/StudentAchievements'; // Import StudentAchievements
+import StaffAchievements from './components/StaffAchievements'; // Import StaffAchievements
+import IncubationCenter from './components/IncubationCenter'; // Import the component
+
+
 // Import the logo images
 import leftLogo from '/sspmcoe-social-removebg-preview.png';
 import rightLogo from '/WhatsApp_Image_2025-03-18_at_19.48.12-removebg-preview.png';
@@ -27,7 +34,7 @@ function App() {
             className="text-xl md:text-2xl lg:text-3xl font-bold text-center bg-gradient-to-r from-blue-400 to-purple-500 bg-clip-text text-transparent mx-6 leading-relaxed"
             style={{ fontFamily: "'Open Sans', sans-serif", fontWeight: 700 }}
           >
-            Sindhudurg Shikshan Prasarak Mandal's<br></br>College of Engineering, Kankavli
+            Sindhudurg Shikshan Prasarak Mandal's<br />College of Engineering, Kankavli
           </h1>
           <img 
             src={rightLogo} 
@@ -56,6 +63,9 @@ function App() {
           />
           <Route path="/achievements/student" element={<StudentAchievements />} />
           <Route path="/achievements/staff" element={<StaffAchievements />} />
+          <Route path="/teacher" element={<TeacherPage />} />
+          <Route path="/student" element={<StudentPage />} />
+          <Route path="/incubation-center" element={<IncubationCenter />} /> {/* New Route */}
         </Routes>
 
         {/* Footer */}

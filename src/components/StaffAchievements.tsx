@@ -4,27 +4,11 @@ const achievements = [
   {
     title: 'Best Research Paper Award',
     description: `
-      Our faculty member, Dr. Anil Patil, received the Best Research Paper Award at the International Conference on Artificial Intelligence, held in Pune on February 15, 2025. 
+      Our faculty member, ................., received the Best Research Paper Award at the International Conference on Artificial Intelligence, held in Pune on February 15, 2025. 
       The paper focused on advancements in AI-driven healthcare solutions, showcasing groundbreaking research and innovation.`,
     image: '/research-award.jpg',
     date: 'February 15, 2025',
-  },
-  {
-    title: 'Excellence in Teaching Award',
-    description: `
-      Prof. Meera Joshi was honored with the Excellence in Teaching Award by the National Education Society for her outstanding contributions to the field of engineering education.`,
-    image:
-      'https://images.unsplash.com/photo-1581091870622-1c6a9b1a3f4b?ixlib=rb-1.2.1&auto=format&fit=crop&w=1000&q=80',
-    date: 'January 20, 2025',
-  },
-  {
-    title: 'Patent Granted for Renewable Energy Innovation',
-    description: `
-      Dr. Suresh Naik was granted a patent for his innovative work on renewable energy solutions, which focuses on improving the efficiency of solar panels using AI-based optimization techniques.`,
-    image:
-      'https://images.unsplash.com/photo-1581092334395-6f1a9b1a3f4b?ixlib=rb-1.2.1&auto=format&fit=crop&w=1000&q=80',
-    date: 'December 10, 2024',
-  },
+  }
 ];
 
 const StaffAchievements = () => {

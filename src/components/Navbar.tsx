@@ -1,18 +1,24 @@
 import React, { useState } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useLocation } from 'react-router-dom';
 import { Menu, X } from 'lucide-react';
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [isDropdownOpen, setIsDropdownOpen] = useState(false);
+  const location = useLocation(); // Get the current route
 
   const menuItems = [
     { name: 'Home', path: '/' },
-    { name: 'Committee', path: '#' },
-    { name: 'Useful Links', path: '#' },
-    { name: 'Incubation Center', path: '#' },
-    { name: 'Contact Us', path: '#' },
+    { name: 'Committee', path: '/committee' },
+    { name: 'Useful Links', path: '/useful-links' },
+    { name: 'Incubation Center', path: '/incubation-center' },
+    { name: 'Contact Us', path: '/contact-us' },
   ];
+
+  const handleCommitteeClick = (e: React.MouseEvent) => {
+    e.preventDefault();
+    setIsDropdownOpen(!isDropdownOpen);
+  };
 
   return (
     <nav className="bg-gray-800 border-b border-gray-700">
@@ -34,9 +40,15 @@ const Navbar = () => {
               <Link
                 key={item.name}
                 to={item.path}
+
                 className={`px-5 py-3 text-base font-medium transition-colors ${
                   item.name === 'Incubation Center'
                     ? 'text-blue-400 hover:text-blue-300'
+
+                className={`px-4 py-2 text-sm font-medium transition-colors ${
+                  location.pathname === item.path
+                    ? 'text-blue-400 hover:text-blue-300' // Highlight active page
+
                     : 'text-gray-300 hover:text-white'
                 }`}
               >
@@ -48,7 +60,15 @@ const Navbar = () => {
             <div className="relative">
               <button
                 onClick={() => setIsDropdownOpen(!isDropdownOpen)}
+
                 className="flex items-center px-5 py-3 text-base font-medium text-gray-300 hover:text-white transition-colors focus:outline-none"
+
+                className={`flex items-center px-4 py-2 text-sm font-medium transition-colors ${
+                  location.pathname.startsWith('/achievements')
+                    ? 'text-blue-400 hover:text-blue-300' // Highlight active dropdown
+                    : 'text-gray-300 hover:text-white'
+                }`}
+
               >
                 Achievements
               </button>
@@ -85,9 +105,15 @@ const Navbar = () => {
               <Link
                 key={item.name}
                 to={item.path}
+
                 className={`block px-5 py-3 rounded-md text-base font-medium ${
                   item.name === 'Incubation Center'
                     ? 'text-blue-400 hover:text-blue-300'
+
+                className={`block px-3 py-2 rounded-md text-base font-medium ${
+                  location.pathname === item.path
+                    ? 'text-blue-400 hover:text-blue-300' // Highlight active page
+
                     : 'text-gray-300 hover:text-white'
                 }`}
               >
@@ -99,7 +125,15 @@ const Navbar = () => {
             <div>
               <button
                 onClick={() => setIsDropdownOpen(!isDropdownOpen)}
+
                 className="block w-full text-left px-5 py-3 rounded-md text-base font-medium text-gray-300 hover:text-white focus:outline-none"
+
+                className={`block w-full text-left px-3 py-2 rounded-md text-base font-medium ${
+                  location.pathname.startsWith('/achievements')
+                    ? 'text-blue-400 hover:text-blue-300' // Highlight active dropdown
+                    : 'text-gray-300 hover:text-white'
+                }`}
+
               >
                 Achievements
               </button>
