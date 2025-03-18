@@ -15,7 +15,7 @@ const FounderSection = () => {
       </div>
       <div className="relative overflow-hidden rounded-lg">
         <img
-          src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?ixlib=rb-1.2.1&auto=format&fit=crop&w=1000&q=80"
+          src=""
           alt="Founder"
           className="w-full h-[400px] object-cover transform hover:scale-105 transition-transform duration-500"
         />
