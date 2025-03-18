@@ -9,7 +9,7 @@ const ScrollingAnnouncements = () => {
   ];
 
   return (
-    <div className="bg-blue-900 py-2 overflow-hidden">
+    <div className="bg-blue-900 py-2 overflow-hidden z-10 relative">
       <div className="animate-scroll whitespace-nowrap">
         <div className="inline-block">
           {announcements.map((announcement, index) => (
