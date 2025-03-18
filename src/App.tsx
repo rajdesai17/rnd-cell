@@ -12,14 +12,14 @@ function App() {
   return (
     <div className="min-h-screen bg-gray-900 text-gray-100">
       {/* Header */}
-      <header className="bg-gray-800 py-6 px-8 flex items-center justify-between">
+      <header className="bg-gray-800 py-8 px-8 flex items-center justify-between">
         <img 
           src={leftLogo} 
           alt="SSPMCOE Logo" 
           className="w-24 h-24 md:w-32 md:h-32 object-contain" 
         />
         <h1
-          className="text-2xl md:text-3xl lg:text-4xl font-bold text-center bg-gradient-to-r from-blue-400 to-purple-500 bg-clip-text text-transparent mx-6 leading-relaxed"
+          className="text-xl md:text-2xl lg:text-3xl font-bold text-center bg-gradient-to-r from-blue-400 to-purple-500 bg-clip-text text-transparent mx-4 leading-loose"
           style={{ fontFamily: "'Open Sans', sans-serif", fontWeight: 700 }}
         >
           Sindhudurg Shikshan Prasarak Mandal's<br></br>College of Engineering, Kankavli
