@@ -10,31 +10,7 @@ const achievements = [
       The web app helps users locate free water refill stations, promoting sustainability and reducing plastic waste. Their innovative approach and problem-solving skills earned them this prestigious recognition.`,
     image: '/deployers.jpg',
     date: 'March 7-8, 2025',
-  },
-  {
-    title: 'National Robotics Championship Winner',
-    description:
-      'Our students secured the first position in the National Robotics Championship 2025, showcasing their innovative design and programming skills.',
-    image:
-      'https://images.unsplash.com/photo-1581091870622-1c6a9b1a3f4b?ixlib=rb-1.2.1&auto=format&fit=crop&w=1000&q=80',
-    date: 'March 10, 2025',
-  },
-  {
-    title: 'AI Research Paper Published',
-    description:
-      'A groundbreaking research paper on AI and Machine Learning by our students was published in the International Journal of Computer Science.',
-    image:
-      'https://images.unsplash.com/photo-1581092334395-6f1a9b1a3f4b?ixlib=rb-1.2.1&auto=format&fit=crop&w=1000&q=80',
-    date: 'February 20, 2025',
-  },
-  {
-    title: 'Hackathon Champions',
-    description:
-      'Our team won the prestigious Hackathon 2025 by developing an innovative app for sustainable living.',
-    image:
-      'https://images.unsplash.com/photo-1581092334395-6f1a9b1a3f4b?ixlib=rb-1.2.1&auto=format&fit=crop&w=1000&q=80',
-    date: 'January 15, 2025',
-  },
+  }
 ];
 
 const Achievements = () => {

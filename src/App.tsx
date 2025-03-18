@@ -7,6 +7,7 @@ import FounderSection from './components/FounderSection';
 import VisionMission from './components/VisionMission';
 import StudentAchievements from './components/StudentAchievements'; // Import StudentAchievements
 import StaffAchievements from './components/StaffAchievements'; // Import StaffAchievements
+import IncubationCenter from './components/IncubationCenter'; // Import the component
 
 // Import the logo images
 import leftLogo from '/sspmcoe-social-removebg-preview.png';
@@ -56,6 +57,7 @@ function App() {
           />
           <Route path="/achievements/student" element={<StudentAchievements />} />
           <Route path="/achievements/staff" element={<StaffAchievements />} />
+          <Route path="/incubation-center" element={<IncubationCenter />} /> {/* New Route */}
         </Routes>
 
         {/* Footer */}
